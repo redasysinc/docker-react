@@ -13,7 +13,10 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build the Docker image
         run: |
-          docker build -t forrestmoon/docker-react -f Dockerfile.dev .      
+          docker build -t forrestmoon/docker-react -f Dockerfile.dev . 
+  test:
+    runs-on: ubuntu-latest
+    steps:
       - name: Run the tests
         run: |
           docker run forrestmoon/docker-react npm run test -- --coverage
