@@ -1,4 +1,3 @@
-sudo: required
 language: generic
 
 services:
@@ -15,7 +14,7 @@ deploy:
   region: "us-east-2"
   app: "redasys-docker"
   env: "Redasys-docker-env"
-  bucket_name: "elasticbeanstalk-us-east-2-795369863836"
+  bucket: "elasticbeanstalk-us-east-2-795369863836"
   bucket_path: "redasys-docker"
   on:
     branch: master
