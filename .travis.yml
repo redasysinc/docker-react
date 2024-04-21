@@ -13,7 +13,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "redasys-docker"
-  env: "Redasys-docker-env1"
+  env: "Redasys-docker-env"
   bucket: "elasticbeanstalk-us-east-2-795369863836"
   bucket_path: "redasys-docker"
   on:
