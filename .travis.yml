@@ -1,0 +1,23 @@
+sudo: required
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - docker build -t forrestmoon/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true forrestmoon/docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-2'
+  app: 'docker'
+  env: 'redasys-docker-env'
+  bucket_name: 'elasticbeanstalk-us-east-2-795369863836'
+  bucket_path: 'redasys-docker'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
